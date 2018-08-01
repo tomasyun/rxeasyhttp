@@ -21,6 +21,7 @@ import android.net.ParseException;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonSyntaxException;
+
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
 
@@ -146,11 +147,13 @@ public class ApiException extends Exception {
             ex = new ApiException(e, ERROR.UNKNOWNHOST_ERROR);
             ex.message = "无法解析该域名";
             return ex;
-        } else if (e instanceof NullPointerException) {
-            ex = new ApiException(e, ERROR.NULLPOINTER_EXCEPTION);
-            ex.message = "NullPointerException";
-            return ex;
-        } else {
+        }
+// else if (e instanceof NullPointerException) {
+//            ex = new ApiException(e, ERROR.NULLPOINTER_EXCEPTION);
+//            ex.message = "NullPointerException";
+//            return ex;
+//        } 
+        else {
             ex = new ApiException(e, ERROR.UNKNOWN);
             ex.message = "未知错误";
             return ex;

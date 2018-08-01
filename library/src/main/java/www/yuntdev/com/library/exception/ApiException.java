@@ -152,7 +152,7 @@ public class ApiException extends Exception {
 //            ex = new ApiException(e, ERROR.NULLPOINTER_EXCEPTION);
 //            ex.message = "NullPointerException";
 //            return ex;
-//        } 
+//        }
         else {
             ex = new ApiException(e, ERROR.UNKNOWN);
             ex.message = "未知错误";

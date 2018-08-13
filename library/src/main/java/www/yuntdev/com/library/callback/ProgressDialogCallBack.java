@@ -18,6 +18,7 @@ package www.yuntdev.com.library.callback;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+
 import io.reactivex.disposables.Disposable;
 import www.yuntdev.com.library.exception.ApiException;
 import www.yuntdev.com.library.subsciber.IProgressDialog;
@@ -98,6 +99,7 @@ public abstract class ProgressDialogCallBack<T> extends CallBack<T> implements P
         if (mDialog != null) {
             if (mDialog.isShowing()) {
                 mDialog.dismiss();
+                mDialog = null;
             }
         }
     }

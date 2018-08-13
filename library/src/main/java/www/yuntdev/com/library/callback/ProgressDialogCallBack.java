@@ -97,7 +97,7 @@ public abstract class ProgressDialogCallBack<T> extends CallBack<T> implements P
             return;
         }
         if (mDialog != null) {
-            if (mDialog.isShowing()) {
+            if (!mDialog.getOwnerActivity().isFinishing()&&mDialog.isShowing()) {
                 mDialog.dismiss();
             }
         }

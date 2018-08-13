@@ -99,7 +99,6 @@ public abstract class ProgressDialogCallBack<T> extends CallBack<T> implements P
         if (mDialog != null) {
             if (mDialog.isShowing()) {
                 mDialog.dismiss();
-                mDialog = null;
             }
         }
     }
